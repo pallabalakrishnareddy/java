@@ -1,0 +1,25 @@
+Problem 1
+1/1 point (graded)
+We can consider the Internet to be a graph in which:
+Nodes are people and edges are computers.
+Nodes are devices and edges are physical or virtual connections
+Nodes are pieces of content and edges are links between them.
+Nodes are devices and edges are pieces of data.
+correct
+Answer
+Correct!The Internet is the physical network of machines that are connected by media.
+Hint
+SaveSave your answer
+Show answer
+Submit
+You have used 1 of 3 attemptsSome problems have options such as save, reset, hints, or show answer. These options follow the Submit button.Correct (1/1 point)Review
+Problem 2
+1/1 point (graded)
+A Uniform Resource Locator (URL) is:
+A unique address for a device on the Internet.
+A piece of software used to find a resource on the World Wide Web.
+A unique identifier for a resource on the World Wide Web that also specifies the protocol for retrieving it
+A protocol used for exchanging data on the World Wide Web.
+correct
+Answer
+Correct!A URL is a type of URI, but the URI does not necessarily specify the protocol used for accessing the resource.

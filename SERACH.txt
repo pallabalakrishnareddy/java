@@ -1,0 +1,209 @@
+public interface Banking {
+    
+	abstract Payee transferAmount(String name, String bankName, String ifscCode, Double depositAmount);
+
+	abstract Payee transferAmount(String aadharId, String ifscCode, Double depositAmount);
+
+	abstract Payee transferAmount(String UPIid, Double depositAmount);
+}
+
+
+
+public class Payee implements Banking {
+
+    private String name;
+	private String bankName;
+	private String ifscCode;
+	private String aadharId;
+	private String UPIid;
+	private Double balanceAmount;
+
+	public Payee(String name, String bankName, String ifscCode, String aadharId, String uPIid, Double balanceAmount) {
+		this.name = name;
+		this.bankName = bankName;
+		this.ifscCode = ifscCode;
+		this.aadharId = aadharId;
+		UPIid = uPIid;
+		this.balanceAmount = balanceAmount;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getBankName() {
+		return bankName;
+	}
+
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+
+	public String getIfscCode() {
+		return ifscCode;
+	}
+
+	public void setIfscCode(String ifscCode) {
+		this.ifscCode = ifscCode;
+	}
+
+	public String getAadharId() {
+		return aadharId;
+	}
+
+	public void setAadharId(String aadharId) {
+		this.aadharId = aadharId;
+	}
+
+	public String getUPIid() {
+		return UPIid;
+	}
+
+	public void setUPIid(String uPIid) {
+		UPIid = uPIid;
+	}
+
+	public Double getBalanceAmount() {
+		return balanceAmount;
+	}
+
+	public void setBalanceAmount(Double balanceAmount) {
+		this.balanceAmount = balanceAmount;
+	}
+
+	@Override
+	public Payee transferAmount(String name, String bankName, String ifscCode, Double depositAmount) {
+		Payee obj = new Payee(getName(), getBankName(), getIfscCode(), getAadharId(), getUPIid(), getBalanceAmount());
+
+//		if (name.contentEquals(obj.name)) {
+//			if (bankName.contentEquals(obj.getBankName())) {
+//				if (ifscCode.contentEquals(obj.getIfscCode())) {
+//					return obj;
+//				}
+//				return null;
+//			}
+//			return null;
+//		}
+		
+//		if((name.contentEquals(obj.name)) && (bankName.contentEquals(obj.getBankName())) && (ifscCode.contentEquals(obj.getIfscCode()))) {
+//			Double newAmount = obj.balanceAmount;
+//			return obj;
+//		}
+//		else {
+//			return null;
+//		}
+
+		if((name.contentEquals(obj.name)) && (bankName.contentEquals(obj.bankName)) && (ifscCode.contentEquals(obj.ifscCode))) {
+			Double newAmount = obj.balanceAmount + depositAmount;
+			obj.setBalanceAmount(newAmount);
+			return obj;
+		}
+		else {
+			return null;
+		}
+
+	}
+
+	@Override
+	public Payee transferAmount(String aadharId, String ifscCode, Double depositAmount) {
+		Payee obj = new Payee(getName(), getBankName(), getIfscCode(), getAadharId(), getUPIid(), getBalanceAmount());
+		
+		if((aadharId.contentEquals(obj.aadharId)) && (ifscCode.contentEquals(obj.ifscCode))) {
+			Double newAmount = obj.balanceAmount + depositAmount;
+			obj.setBalanceAmount(newAmount);
+			return obj;
+		}
+		else {
+			return null;
+		}
+		
+	}
+
+	@Override
+	public Payee transferAmount(String UPIid, Double depositAmount) {
+		
+		Payee obj = new Payee(getName(), getBankName(), getIfscCode(), getAadharId(), getUPIid(), getBalanceAmount());
+		
+		if((UPIid.contentEquals(obj.UPIid))) {
+			Double newAmount = obj.balanceAmount + depositAmount;
+			obj.setBalanceAmount(newAmount);
+			return obj;
+		}
+		else {
+			return null;
+		}
+		
+	}
+
+}
+
+
+
+import java.io.*;
+
+public class Main {
+    public static void main(String args[]) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter the name");
+        String name = br.readLine();
+        System.out.println("Enter the bankname");
+        String bankName = br.readLine();
+        System.out.println("Enter the IFSC Code");
+        String ifscCode = br.readLine();
+        System.out.println("Enter the aadhar id");
+        String aadharId = br.readLine();
+        System.out.println("Enter the UPI id");
+        String upiId = br.readLine();
+        System.out.println("Enter the amount");
+        Double balance = Double.parseDouble(br.readLine());
+        Payee payee = new Payee(name,bankName,ifscCode,aadharId,upiId,balance);
+        System.out.println("1. Transfer using name, bankname and IFSC code\n2. Transfer using aadharId and IFSC code\n3. Transfer using UPI id\nEnter your choice");
+        Integer choice = Integer.parseInt(br.readLine());
+        String pname="",pbank="",pifsc="",paadhar="",pupi="";
+        Double amount;
+        Payee p = null;
+        switch(choice) {
+            case 1:
+	        	System.out.println("Enter the payee account name");
+	        	pname = br.readLine();
+	        	System.out.println("Enter their bankname");
+	        	pbank = br.readLine();
+	        	System.out.println("Enter their IFSC Code");
+	        	pifsc = br.readLine();
+	        	System.out.println("Enter the amount to deposit");
+	        	amount = Double.parseDouble(br.readLine());
+	        	p = payee.transferAmount(pname, pbank, pifsc, amount);
+	        	break;
+	        case 2:
+	        	System.out.println("Enter the aadhar id");
+	        	paadhar = br.readLine();
+	        	System.out.println("Enter their IFSC Code");
+	        	pifsc = br.readLine();
+	        	System.out.println("Enter the amount to deposit");
+	        	amount = Double.parseDouble(br.readLine());
+	        	p = payee.transferAmount(paadhar, pifsc, amount);
+	        	break;
+	        case 3:
+	        	System.out.println("Enter the UPI id");
+	        	pupi = br.readLine();
+	        	System.out.println("Enter the amount to deposit");
+	        	amount = Double.parseDouble(br.readLine());
+	        	p = payee.transferAmount(pupi, amount);
+	        	break;
+	        default:
+	        	System.out.println("Invalid choice");
+	        	break;
+        }
+        if(p!=null) {
+        	System.out.println("Amount deposited successfully");
+        	System.out.println("Current balance of "+p.getName()+" account is "+p.getBalanceAmount());
+        }else {
+        	System.out.println("Payee not found");
+        }
+        
+    }
+}

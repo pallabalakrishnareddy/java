@@ -1,0 +1,587 @@
+Changing property using Javascript
+-------------------------------------
+<html>
+<head>
+<script type="text/javascript">
+  function apply()
+  {
+      document.getElementById("innerDiv").style.marginTop = "100px";
+      document.getElementById("outerDiv").style.border = "1px solid";
+  }
+  </script>
+  </head>
+  <body onload="apply()">
+    <div id="outerDiv">
+    <div id="innerDiv">
+        A wedding planner is a professional who assists with the design, planning and management of a client's wedding. Weddings are significant events in people's lives and as such, couples are often willing to spend considerable amount of money to ensure that their weddings are well-organized. Wedding planners are often used by couples who work long hours and have little spare time available for sourcing and managing wedding venues and wedding suppliers.
+    </div>
+    </div>
+	</script>
+   </body> 
+</html>
+
+JS - Withdraw and Deposit
+-----------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+          var initV=1000;
+           function Withdraw()
+           {
+               initV=initV-parseInt(document.getElementById("number").value);
+               
+               if(initV<=500)
+               {
+                   document.getElementById("amount").innerHTML="Amount less than 500";
+               }
+               else
+               {
+                   document.getElementById("amount").innerHTML=initV;
+               }
+           }
+           function Deposit()
+           {
+               initV=initV + parseInt(document.getElementById("number").value);
+            document.getElementById("amount").innerHTML=initV;
+
+           }
+    </script>
+</head>
+ <body>
+    <h1>Bank</h1>
+    <h2>Amount withdraw and deposit</h2>
+    Enter your name:<input type="number" id="number">        
+    <button type="submit" onClick="Withdraw()" id="button1">Withdraw</button>
+    <button type="submit" onClick="Deposit()" id="button2">Deposit</button>
+    <p id="amount">1000</p>
+</body>   
+</html>
+
+
+Multiplication Table
+--------------------------
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <script type="text/javascript" >
+         function generateTable()
+         {
+            var val = parseInt(document.getElementById("number").value);
+            
+             for(var i=1; i<=10;i++)
+             {
+                 
+                 document.getElementById("result").innerHTML +=  i +"*" +val +"="+ val*i +"<br>";
+             }
+             
+
+         }
+    </script>
+</head>
+<body>
+	<h1>Generate Multiplication Tables</h1>
+    
+        Number<input type="number" id="number"><br>
+        <button type="submit" onClick="generateTable()" id="generate">Genrate</button>
+
+    <div id="result">
+        
+    </div>
+	
+</body>
+</html>
+
+
+
+Encrypted Text
+------------------
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function encryptData()
+{
+    var input=document.getElementById("input").value;
+    var i,total="",ptotal="";
+    for(i=0;i<input.length;i++)
+    {
+        total=input.charCodeAt(i)+3;
+       totalc=String.fromCharCode(total);
+        ptotal+=""+totalc;
+    }
+    document.getElementById("result").innerHTML="The Encrypted data : "+ptotal;
+}
+</script>    
+</head>
+	<!-- fill your code here-->
+    <body>
+        <h2>Encryption of the Data</h2>
+        Enter the data <input type="text" id="input"></br>
+        <input type="button" value="Encrypt" id="encrypt" onclick=encryptData()>
+        
+    </body>
+    <div id="result">
+        
+    </div>
+</html>
+
+
+
+JS CamelCase
+----------------
+<html>
+	<head>
+		<script type="text/javascript">
+			function convert()
+            {
+                var str = document.getElementById("text").value;
+                var l = str.length;
+                var arr = str.split(" ");
+              
+                for(var i=0; i<arr.length; i++)
+                {
+                    var eachString = arr[i];
+                    var l2 = eachString.length;
+                
+                    document.getElementById("result").innerHTML +=eachString[0].toUpperCase() + "<br>" ;
+                    for(var j=1; j<l2;j++)
+                    {
+                        document.getElementById("result").innerHTML +=eachString[j] + "<br>" ;
+                    }
+                    document.getElementById("result").innerHTML +=" " + "<br>" ;
+                }
+            }
+		</script>
+	</head>
+	<body>
+		<h1>CamelCase</h1>
+        <input type="text" id="text">
+        <button id="convert" type="submit" onclick="convert()">Convert</button>
+        <div id="result">
+            
+        </div>
+	</body>
+</html>
+
+
+
+JS - Maximum event count
+---------------------------
+<!DOCTYPE html>
+<html>
+
+    <!--Enter your text here!--> 
+   <head>
+       <script>
+           function maxevent(){
+               var b=parseInt(document.getElementById("event1").value);
+               var e=parseInt(document.getElementById("event2").value);
+               var c=parseInt(document.getElementById("event3").value);
+               var s=parseInt(document.getElementById("event4").value);
+               
+               var result=Math.max(b,e,c,s);
+               
+               if(result==b)
+               {
+                   document.getElementById("result").innerHTML="Maximum number of event occured in this month is Birthday party";
+                   
+               }
+               else if(result==e)
+               {
+                   document.getElementById("result").innerHTML="Maximum number of event occurred in this month is Engagement parties";
+                   
+               }
+               else if(result==c)
+               {
+                   document.getElementById("result").innerHTML="Maximum number of event occured in this month is Corporate event";
+                   
+               }
+               else if(result==s)
+               {
+                   document.getElementById("result").innerHTML="Maximum number of event occurred in this month is Social Gathering";
+                   
+               }
+               else{}
+           }
+       </script>
+   </head>
+   <body>
+       <h2>Event count for a month</h2>
+       Birthday party event :<input id="event1" type="text"><br/>
+       Engagement parties event:<input id="event2" type="text"><br/>
+       Corporate event :<input id="event3" type="text"><br/>
+       Social Gathering event :<input id="event4" type="text"><br/>
+       <button type="submit" id="button" onclick="maxevent()">Submit</button><br/>
+       <div id="result">
+           
+       </div>
+   </body>
+   
+</html>
+
+
+
+JS - Merge Arrays
+------------------
+
+
+
+JS Push & Pop
+------------------
+<html>
+    <!-- fill your code here-->
+    <head>
+        <script>
+        var events=new Array();
+            function pushElements()
+            {
+                events.push(document.getElementById("input").value);
+                 document.getElementById("events").innerHTML="Added Successfully";
+            }
+            function popElements()
+            {
+                events.pop();
+                 document.getElementById("events").innerHTML="Removed Successfully";
+            }
+            function display()
+            {
+               
+               if(events.length=="")
+               {
+                   document.getElementById("events").innerHTML="Event array is empty";
+               }
+                    else
+                    {
+                document.getElementById("events").innerHTML="<h2>The Events in the array</h2></br>"+"<ul><li>"+events+"</li></ul></br>"
+                    }
+           
+                }
+        </script>
+    </head>
+    <body>
+    <h1>Events List</h1>
+    Enter the Events: <input type="text" id="input"></br>
+    <button type="button" id="push" onclick="pushElements()">Push</button>
+    <button type="button" id="pop" onclick="popElements()">Pop</button>
+    <button type="button" id="display" onclick="display()">Display</button>
+    <div id="events">
+       
+    </div>
+    </body>
+   
+</html>
+
+
+JS - Event Address
+--------------------
+<!DOCTYPE html>
+<html>
+<script>
+    function Address1()
+    {
+        document.getElementById("result1").innerHTML="Saved Successfully<br>Please enter the pincode for the above address";
+       
+    }
+    
+    function Address2()
+    {
+        var a=document.getElementById("line1").value;
+        var b=document.getElementById("line2").value;
+        var c=document.getElementById("city").value;
+        var d=document.getElementById("state").value;
+        var e=document.getElementById("pincode").value;
+        function EventAddress(line1,line2,city,state)
+    {
+        this.line1=line1;
+        this.line2=line2;
+        this.city=city;
+        this.state=state;
+    }
+    var address=new EventAddress(a,b,c,d);
+    address.pincode=e;
+    document.getElementById("result2").innerHTML="Address-Line 1:"+address.line1+"<br>Address-Line 2 :"+address.line2+"<br>City :"+address.city+"<br>State :"+address.state+"<br>Pincode :"+address.pincode;
+        
+    
+       
+    }
+</script>
+    <!--Enter your text here!-->    
+   <body>
+       <h2>Event Address</h2>
+       Enter Address-Line 1:<input type="text" id="line1"><br>
+       Enter Address-Line 2:<input type="text" id="line2"><br>
+       Enter city:<input type="text" id="city"><br>
+       Enter status:<input type="text" id="state"><br>
+       <button type="submit" value="Submit" id="button1" onclick="Address1()">Submit</button>
+       <div id="result1"></div>
+        Enter Pincode:<input type="text" id="pincode"><br>
+        <button type="submit" value="Display" id="button2" onclick="Address2()">Display</button>
+<div id="result2"></div></body>
+</html>
+
+
+
+
+JS - Event Schedule
+-------------------
+
+
+
+
+JS - Simple Cart
+----------------------
+
+
+OnMouseout Events
+---------------------
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+   <script>
+	function hoverRow1()
+    {
+        document.getElementById("row1").style.backgroundColor="#c8daf7";
+    
+    }
+        function removeHover1()
+    {
+        document.getElementById("row1").style.backgroundColor="#ffffff";
+    
+    }
+        function hoverRow2()
+    {
+        document.getElementById("row2").style.backgroundColor="#9df9ec";
+    
+    }
+        function removeHover2()
+    {
+        document.getElementById("row2").style.backgroundColor="#ffffff";
+    }
+        function hoverRow3()
+    {
+        document.getElementById("row3").style.backgroundColor="#b2a0e8";
+    
+    }
+        function removeHover3()
+    {
+        document.getElementById("row3").style.backgroundColor="#ffffff";
+    
+    }
+        function hoverRow4()
+    {
+        document.getElementById("row4").style.backgroundColor="#d8a0e8";
+    
+    }
+        function removeHover4()
+    {
+        document.getElementById("row4").style.backgroundColor="#ffffff";
+    
+    }
+	   //Fill code here
+
+
+</script>
+</head>
+<body>
+	
+    <center><h1>Pink Frg Event Organizer</h1></center>
+    <center>
+    <table  border="1" id="table">
+	<tr>
+    <th>Name</th>
+    <th>Venue</th>
+    <th>Date</th>
+    <th>Cost</th>
+  </tr>
+  <tr id="row1" onMouseOver="hoverRow1()" onMouseOut="removeHover1()">
+    <td  >Wedding Planning</td>
+    <td>Sri Plus Thirumana Mahal</td>
+    <td>4.5.2018</td>
+    <td>500000</td>
+  </tr>
+  <tr>
+  <tr id="row2" onMouseOver="hoverRow2()" onMouseOut="removeHover2()"> 
+	 <td >Corporate Events</td>
+    <td>RVS Hall, 2nd Floor</td>
+    <td>6.9.2018</td>
+    <td>50000</td>
+  </tr>
+  <tr>
+   <tr id="row3" onMouseOver="hoverRow3()" onMouseOut="removeHover3()">
+    <td>Award Ceremonies</td>
+    <td>Vivekanandha Auditorium</td>
+    <td>6.1.2018</td>
+    <td>300000</td>
+  </tr>
+  <tr>
+   <tr id="row4" onMouseOver="hoverRow4()" onMouseOut="removeHover4()">
+	<td>Gala Dinners</td>
+    <td>Paga Towers</td>
+    <td>11.3.2018</td>
+    <td>75000</td>
+  </tr>
+  
+</table >
+	
+  
+   
+</center>
+   
+
+</body>
+</html>
+
+
+
+
+
+Event Booking with Date
+-------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        organizerDates =["28/08/2020","01/01/2017","02/08/2020","28/07/2020","12/08/2020","23/09/2020","14/08/2020","17/08/2020","28/04/2020","19/08/2020","16/08/2020"]
+//Fill your code here
+function validateForm()
+{
+    var a=document.getElementById("date").value;
+    if((a!=0)&&(organizerDates.includes(a)))
+    {
+        var b=document.getElementById("result2");
+        document.getElementById("result2");
+    }
+     if(organizerDate.includes(a)==false)
+    {
+        document.getElementById("result1");
+    }
+}
+</script>
+
+</head>
+ <body>
+ <h2>Date Validation</h2>
+ Enter the date:<input type:"text" id="date"><br>
+ <button type="button" id="button1" onClick=validateForm()>Submit</button>
+ <div id="result1" style="color:red">No slot available on this date</div>
+ <div id="result2"style="color:green">Event is Booked</div>
+<!--Fill your code here-->
+</body>   
+</html>
+
+
+
+
+
+JS BLANK & LENGTH VALIDATION
+------------------------------
+<html>
+	<head>
+		<script type="text/javascript">
+		 	/*Enter your text here*/
+             function validate()
+             {
+             var a=document.getElementById("name").value;
+             if(a=="")
+             {
+                 document.getElementById("warning").innerHTML="Please enter your name";
+                 
+             }
+             if(a!="")
+             {
+                 document.getElementById("success").innerHTML="Length of your name is"+a.length;
+             }
+             }
+		 </script>
+        
+	</head>
+	<body>
+    <h3>Blank Validation & length Validation </h3>
+    Enter your Name:<input type="text" id="name"><br>
+    <button type="button" id="validate" onClick="validate()">Validate</button>
+    <div id="warning" style="color:ff0000"></div>
+    <div id="success"></div>
+		<!--Enter your text here-->
+	</body>
+</html>
+
+
+
+
+
+JS - Credit card validation
+------------------------------
+<html>
+    <head>
+		<script type="text/javascript">
+		 	/*Enter your text here*/
+             function validate()
+             {
+                  var a=document.getElementById("phoneNumber").value;
+                   var b=document.getElementById("cardNumber").value;
+                   if(a.length!=10)
+                   {
+                        document.getElementById("phoneNumber_Warning").innerHTML="Phone Number must be 10 digits";
+                   }
+                   if(b.length!=16)
+                   {
+                       document.getElementById("cardNumber_Warning").innerHTML="Card number must be 16 digits";
+                   }
+                   if(a.length==10&&b.length==16)
+                   {
+                       document.getElementById("success").innerHTML="Details stored in database";
+                   }
+             }
+              var letters=/^[A-Za-z]+$/;
+             function checkPhoneNumber()
+             {
+                
+                 var a=document.getElementById("phoneNumber").value;
+                 if(a.match(letters))
+                 {
+                     document.getElementById("phoneNumber_Warning");
+                     return false;
+                 }
+                
+             }
+             function checkCardNumber()
+             {
+                  
+                 var a=document.getElementById("cardNumber").value;
+                 if(a.match(letters))
+                 {
+                     document.getElementById("cardNumber_Warning");
+                     return false;
+                 }
+               
+             }
+		 </script>
+	</head>
+	<body>
+		<!--Enter your text here-->
+        <h3>Phone Number & Card Validation</h3>
+        Enter your Phone Number:<input type="text" id="phoneNumber" onkeydown="return checkPhoneNumber();"><div id="phoneNumber_Warning">Phone number must contains only digits</div></br>
+        
+        Enter your Card Number:<input type="text" id="cardNumber" onkeydown="return checkCardNumber();">
+        <div id="cardNumber_Warning">Card number must contains only digits</div></br>
+        <button type="button" id="validate" onclick="validate()">Validate</button>
+       <div id="success"></div>
+	</body>
+</html>
+
+
+
+
+Resume Form Validation
+-----------------------
+
+
+
+
+INSTAGRAM - PROJECT 4  Comments
+-----------------------------------
